@@ -12,7 +12,14 @@ namespace AroudYou.Persistence.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-           
+            builder.Property(u => u.FirstName)
+                .HasMaxLength(30);
+            builder.Property(u => u.LastName)
+                .HasMaxLength(30);
+            builder.Property(u => u.Password)
+                .IsRequired();
+
+
 
 
         }

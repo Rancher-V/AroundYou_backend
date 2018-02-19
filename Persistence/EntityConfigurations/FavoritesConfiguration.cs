@@ -12,7 +12,14 @@ namespace AroudYou.Persistence.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Favorite> builder)
         {
-            throw new NotImplementedException();
+            builder.HasOne(f => f.User)
+                .WithMany(u => u.Favorites)
+                .HasForeignKey(f => f.UserId);
+
+            builder.HasOne(f => f.Item)
+                .WithMany(i => i.Favorites)
+                .HasForeignKey(f => f.ItemId);
+
         }
     }
 }

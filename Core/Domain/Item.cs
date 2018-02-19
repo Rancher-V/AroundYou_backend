@@ -10,6 +10,7 @@ namespace AroudYou.Core.Domain
         public Item()
         {
             ItemCategories = new HashSet<ItemCategory>();
+            Favorites = new HashSet<Favorite>();
         }
 
         public int Id { get; set; }
@@ -25,7 +26,6 @@ namespace AroudYou.Core.Domain
         public string ImageUrl { get; set; }
         public string Url { get; set; }
         public virtual ICollection<ItemCategory> ItemCategories { get; set; }
-
-
+        public virtual ICollection<Favorite> Favorites { get; set; }
     }
 }

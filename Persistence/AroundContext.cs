@@ -19,6 +19,7 @@ namespace AroudYou.Persistence
         public virtual DbSet<Favorite> Favorites { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ItemCategory> ItemCategories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +28,7 @@ namespace AroudYou.Persistence
             modelBuilder.ApplyConfiguration(new FavoritesConfiguration());
             modelBuilder.ApplyConfiguration(new ItemsConfiguration());
             modelBuilder.ApplyConfiguration(new UsersConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemCategoryConfiguration());      
         }
 
     }
