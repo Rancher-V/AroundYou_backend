@@ -12,6 +12,9 @@ namespace AroudYou.Persistence.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Item> builder)
         {
+            builder.Property(i => i.Id)
+                .ValueGeneratedNever();       
+
             builder.Property(i => i.Name)
                 .IsRequired()
                 .HasMaxLength(255);

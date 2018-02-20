@@ -11,9 +11,10 @@ using System;
 namespace AroudYou.Migrations
 {
     [DbContext(typeof(AroundContext))]
-    partial class AroundContextModelSnapshot : ModelSnapshot
+    [Migration("20180219174212_alterItemIdType")]
+    partial class alterItemIdType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +57,8 @@ namespace AroudYou.Migrations
 
             modelBuilder.Entity("AroudYou.Core.Domain.Item", b =>
                 {
-                    b.Property<string>("Id");
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address")
                         .HasMaxLength(255);

@@ -12,6 +12,9 @@ namespace AroudYou.Persistence.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Favorite> builder)
         {
+            builder.Property(f => f.Id)
+                .ValueGeneratedOnAdd();
+
             builder.HasOne(f => f.User)
                 .WithMany(u => u.Favorites)
                 .HasForeignKey(f => f.UserId);

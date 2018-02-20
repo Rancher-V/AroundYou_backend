@@ -11,9 +11,10 @@ using System;
 namespace AroudYou.Migrations
 {
     [DbContext(typeof(AroundContext))]
-    partial class AroundContextModelSnapshot : ModelSnapshot
+    [Migration("20180220001955_modifyAutoIncrement")]
+    partial class modifyAutoIncrement
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
