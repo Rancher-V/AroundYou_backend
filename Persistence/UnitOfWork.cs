@@ -22,10 +22,10 @@ namespace AroudYou.Persistence
         }
 
 
-        public IItemRepository Items { get; }
+        public IItemRepository Items { get; set; }
         public IFavoriteRepository Favorites { get; set ; }
         public IUserRepository Users { get; set; }
-        public ICategoryRepository Categories { get; }
+        public ICategoryRepository Categories { get; set; }
        
         public int Complete()
         {

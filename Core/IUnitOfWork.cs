@@ -8,10 +8,10 @@ namespace AroudYou.Core
 {
     public interface IUnitOfWork : IDisposable
     {
-        IItemRepository Items { get; }
+        IItemRepository Items { get; set; }
         IFavoriteRepository Favorites { get; set; }
         IUserRepository Users { get; set; }
-        ICategoryRepository Categories { get; }
+        ICategoryRepository Categories { get; set; }
         int Complete();
     }
 }
