@@ -29,7 +29,7 @@ namespace AroudYou.Persistence
         public IFavoriteRepository Favorites { get; set ; }
         public IUserRepository Users { get; set; }
         public ICategoryRepository Categories { get; set; }
-<<<<<<< HEAD
+
         public IItemCategoryRepository ItemCategories { get; set; }
 
         public void AddItem(Item item)
@@ -63,9 +63,7 @@ namespace AroudYou.Persistence
             Complete();
         }
 
-=======
-       
->>>>>>> d0a337afaebe10c62f7a7d1e7e0ba79e42c8ad0b
+
         public int Complete()
         {
             return _context.SaveChanges();
