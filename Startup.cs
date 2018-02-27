@@ -10,6 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using AroudYou.Persistence;
 using Microsoft.EntityFrameworkCore;
+using AroudYou.Core;
+using Microsoft.AspNetCore.Http;
+using AroudYou.Services;
+using AroudYou.Middlewares;
 
 namespace AroudYou
 {
@@ -26,6 +30,8 @@ namespace AroudYou
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AroundContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ISeedDataService, SeedDataService>();
             services.AddMvc();
         }
 
@@ -37,7 +43,21 @@ namespace AroudYou
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSeedDataMiddleware();
+
             app.UseMvc();
+
+            app.Use(async (context, next) =>
+            {
+                // Do work that doesn't write to the Response.
+                await next.Invoke();
+                // Do logging or other work that doesn't write to the Response.
+            });
+
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Hello from 2nd delegate.");
+            });
         }
     }
 }

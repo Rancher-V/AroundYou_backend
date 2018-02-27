@@ -8,5 +8,6 @@ namespace AroudYou.Core.Repositories
 {
     public interface IFavoriteRepository : IRepository<Favorite>
     {
+
     }
 }

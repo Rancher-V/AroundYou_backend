@@ -11,5 +11,8 @@ namespace AroudYou.Core.Repositories
         Item GetSingleItemWithFavAndCate(string id);
 
         IEnumerable<Item> GetItemWithFavAndCate(int pageIndex, int pageSize);
+
+
+
     }
 }

@@ -13,7 +13,8 @@ namespace AroudYou.Persistence.Repositories
         public ItemRepository(AroundContext context) : base(context)
         {
 
-        }
+        } 
+
         public Item GetSingleItemWithFavAndCate(string id)
         {
             return AroundContext.Items          //TODO: add where clause for time to get recent period
