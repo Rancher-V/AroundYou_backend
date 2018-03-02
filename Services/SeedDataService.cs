@@ -35,15 +35,15 @@ namespace AroudYou.Services
             favorite.User = user;
             favorite.LastFavorTime = DateTime.Now;
 
-            ItemCategory ic = new ItemCategory();
+            Categories ic = new Categories();
             ic.Category = category;
             ic.Item = item;
 
-            _context.AddUser(user);
-            _context.AddItem(item);
-            _context.AddCategory(category);
-            _context.AddFavorite(favorite);
-            _context.AddItemCategory(ic);
+            _context.Users.Add(user);
+            _context.Items.Add(item);
+            _context.Categories.Add(category);
+            _context.Favorites.Add(favorite);
+            _context.ItemCategories.Add(ic);
 
             await _context.CompleteAsync();
         }

@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AroudYou.Persistence.EntityConfigurations
 {
-    public class ItemCategoryConfiguration : IEntityTypeConfiguration<ItemCategory>
+    public class ItemCategoryConfiguration : IEntityTypeConfiguration<Categories>
     {
-        public void Configure(EntityTypeBuilder<ItemCategory> builder)
+        public void Configure(EntityTypeBuilder<Categories> builder)
         {
             builder.HasKey(ic => new { ic.ItemId, ic.CategoryId});
 

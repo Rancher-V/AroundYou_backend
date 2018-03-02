@@ -13,14 +13,11 @@ namespace AroudYou.Core
         IFavoriteRepository Favorites { get; set; }
         IUserRepository Users { get; set; }
         ICategoryRepository Categories { get; set;}
+        IItemCategoryRepository ItemCategories { get; set; }
         void Recreate();
         int Complete();
-        Task<int> CompleteAsync();
-        void AddItem(Item item);
-        void AddCategory(Category category);
-        void AddUser(User user);
-        void AddFavorite(Favorite favorite);
-        void AddItemCategory(ItemCategory itemCategory);
+        Task<int> CompleteAsync();      
+        
 
     }
 }

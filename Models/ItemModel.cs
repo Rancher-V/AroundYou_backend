@@ -1,16 +1,16 @@
-﻿using System;
+﻿using AroudYou.Core.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AroudYou.Core.Domain
+namespace AroudYou.Models
 {
-    public class Item
+    public class ItemModel
     {
-        public Item()
+        public ItemModel()
         {
-            ItemCategories = new HashSet<Categories>();
-            Favorites = new HashSet<Favorite>();
+            Categories = new HashSet<string>();          
         }
 
         public string Id { get; set; }
@@ -25,7 +25,8 @@ namespace AroudYou.Core.Domain
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public string Url { get; set; }
-        public virtual ICollection<Categories> ItemCategories { get; set; }
-        public virtual ICollection<Favorite> Favorites { get; set; }
+        public virtual ICollection<string> Categories { get; set; }
+        
+
     }
 }

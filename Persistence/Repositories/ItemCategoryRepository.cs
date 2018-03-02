@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AroudYou.Persistence.Repositories
 {
-    public class ItemCategoryRepository : Repository<ItemCategory>, IItemCategoryRepository
+    public class ItemCategoryRepository : Repository<Categories>, IItemCategoryRepository
     {
         public ItemCategoryRepository(AroundContext context) : base(context)
         {

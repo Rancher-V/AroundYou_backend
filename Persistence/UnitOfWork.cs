@@ -22,6 +22,7 @@ namespace AroudYou.Persistence
             Users = new UserRepository(_context);
             Categories = new CategoryRepository(_context);
             ItemCategories = new ItemCategoryRepository(_context);
+
         }
 
 
@@ -29,29 +30,7 @@ namespace AroudYou.Persistence
         public IFavoriteRepository Favorites { get; set ; }
         public IUserRepository Users { get; set; }
         public ICategoryRepository Categories { get; set; }
-
         public IItemCategoryRepository ItemCategories { get; set; }
-
-        public void AddItem(Item item)
-        {
-            Items.Add(item);
-        }
-
-        public void AddCategory(Category category) {
-            Categories.Add(category);
-        }
-
-        public void AddUser(User user) {
-            Users.Add(user);
-        }
-
-        public void AddFavorite(Favorite favorite) {
-            Favorites.Add(favorite);
-        }
-        public void AddItemCategory(ItemCategory itemCategory) {
-            ItemCategories.Add(itemCategory);
-        }
-
 
         public void Recreate()
         {

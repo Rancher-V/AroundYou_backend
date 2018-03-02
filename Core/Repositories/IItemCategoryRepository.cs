@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AroudYou.Core.Repositories
 {
-    public interface IItemCategoryRepository : IRepository<ItemCategory>
+    public interface IItemCategoryRepository : IRepository<Categories>
     {
     }
 }
